@@ -60,7 +60,7 @@ class Service2Captcha:
 
     async def get_captcha_token_async(self):
         result = await asyncio.to_thread(
-            lambda: self.solver.turnstile(
+            lambda: self.solver.solve_turnstile(
                 sitekey=CaptchaConfig.WEBSITE_KEY,
                 url=CaptchaConfig.WEBSITE_URL
             )
